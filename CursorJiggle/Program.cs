@@ -7,23 +7,26 @@ namespace CursorJiggle
 
     internal class Program
     {
-        private static bool point2;
-
         [DllImport("user32.dll")]
         static extern bool SetCursorPos(int X, int Y);
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
 
+        // https://www.pinvoke.net/default.aspx/user32.setcursorpos
 
 
-        static extern bool GetCursorPos(out POINT point);
+
+        public static extern bool GetCursorPos(out POINT point);
+        public static int Counter { get; set; } = 0;
+        public static bool Jiggle { get; set; } = false;
 
         static void Main(string[] args)
         {
-
+            var previousCoordinates = (0, 0);
+            var currentCoordinates = (0, 0);
             POINT point;
-            //GetCursorPos(out point);
+
             //SetCursorPos(0,0);
 
             while (true)
@@ -31,8 +34,25 @@ namespace CursorJiggle
                 GetCursorPos(out point);
                 int x = point.X;
                 int y = point.Y;
+
+                currentCoordinates.Item1 = x;
+                currentCoordinates.Item2 = y;
+
+
                 Console.WriteLine($"X: {x} Y: {y}");
-                Thread.Sleep(500);
+
+                if (true)
+                {
+
+                }
+
+
+
+
+
+
+                Counter++;
+                Thread.Sleep(10);
             }
 
 
