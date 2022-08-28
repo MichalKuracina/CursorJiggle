@@ -30,7 +30,7 @@ namespace CursorJiggle
 
         static void Main(string[] args)
         {
-            inactivityTime = (args.Length == 0) ? 60 : Convert.ToInt16(args[0]);
+            inactivityTime = (args.Length == 0) ? 30 : Convert.ToInt16(args[0]);
 
             previousCoordinates = (0, 0);
             currentCoordinates = (0, 0);
@@ -81,7 +81,7 @@ namespace CursorJiggle
 
                     jiggleTracker++;
 
-                    if (jiggleTracker == 600)
+                    if (jiggleTracker == 3000)
                     {
                         jiggleTracker = 0;
                     }
