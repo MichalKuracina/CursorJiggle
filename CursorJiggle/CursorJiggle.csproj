@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>Michal Kuracina</Authors>
     <Description>Jiggle mouse cursor every 60 seconds</Description>
     <ApplicationIcon>chicken_animal_5834.ico</ApplicationIcon>
+	  <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
