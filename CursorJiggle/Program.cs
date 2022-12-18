@@ -80,7 +80,6 @@ namespace CursorJiggle
                         case int n when (0 <= n && n <= 25):
                             Jiggle(1);
                             break;
-
                         case int n when (50 < n && n <= 100):
                             Jiggle(2);
                             break;
